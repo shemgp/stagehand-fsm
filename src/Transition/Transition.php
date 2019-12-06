@@ -73,4 +73,9 @@ class Transition implements TransitionInterface
     {
         return $this->event;
     }
+
+    public function getEvents()
+    {
+        return $this->events;
+    }    
 }

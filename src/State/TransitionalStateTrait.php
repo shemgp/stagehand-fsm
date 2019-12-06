@@ -41,4 +41,9 @@ trait TransitionalStateTrait
     {
         $this->events[$event->getEventId()] = $event;
     }
+
+    public function getEvents()
+    {
+        return $this->events;
+    }    
 }
