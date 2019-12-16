@@ -160,6 +160,26 @@ class StateMachine implements StateMachineInterface
         return $this->currentState;
     }
 
+    public function setCurrentState($currentState)
+    {
+        $this->currentState = $currentState;
+    }
+
+    /**
+     * Jump to a given state
+     * @param  string $stateId Name of state
+     * @return bool           false if can't jump
+     */
+    public function jumpToState($stateId)
+    {
+        $state = $this->getState($stateId);
+        if ($state == null)
+            return false;
+
+        $this->setCurrentState($state);
+        return true;
+    }
+
     /**
      * {@inheritdoc}
      */
